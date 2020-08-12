@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button class="botao" onclick='criarBox()'>Aperte</button>
+
+    <script>
+
+        function criarBox() {
+            var boxElement = document.createElement("div");
+
+            boxElement.style.width = '100px';
+            boxElement.style.height = '100px';
+            boxElement.style.backgroundColor = '#f00';
+            boxElement.style.margin = '10px';
+
+            boxElement.onmouseover = function(){
+                boxElement.style.backgroundColor = getRandomColor();
+            }
+
+            boxElement.classList.add('box');
+
+            document.body.appendChild(boxElement);
+        }
+
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+
+    </script>
+</body>
+
+</html>
